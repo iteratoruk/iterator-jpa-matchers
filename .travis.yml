@@ -8,3 +8,8 @@ branches:
   only:
   - master
   - "/^iterator-jpa-matchers-[0-9]+\\.[0-9]+\\.[0-9]+/"
+after_success:
+- mvn clean test jacoco:report coveralls:report
+env:
+  global:
+    secure: vVdE9Z7MT8MXGSXqZj5GSvDW8cUqHQHgrK2DK6VLXHOLkEcpetzatbG2m9vCrOOeJLENDY97RN/y9UoqqdvxPaUUzLb6fuK2tiZDVRGMf0q5FbM70qiDstLnVW6rOYYACS9V7Ta+ghgoEJkRbdzSgCtlRbEU5WGAA6s5H3M+SLoAxKwL0juTxRhGdubftvEWr8uG1EQxKPEpUc+AkzQS9mNd+XnijEStaBYItRbuYI0z5I6Wzp6ttQv/VdRGPjaxMPMPYnolawJSw2N0p+Pd/0G65Cu6gxib9CfLjqw9/dIfwuTlsaNUN7nXtFf8Y4pOD4l4YB3XPdo0hjb653I4Ppu46m6ytfEiVNaXgURbYqjhNTABJhdQ54+8fq8HJGsWltRB5sO0HZA0OsPTFwKj9Xtif6vlCL5lMmoiTSRbfmvkjbPoKe3HcKRjAJbetAz29/VMHZHp0Dr++KC9KtdUqeGZBYcWY5dJ06eYe1Aj+0iLCgVDcVMRTmSigHTgXvhgDQVQcHIlgzu70zScelhp4/eOl0Ttdep55r52atEMayqbRwqscvVg7oOwfVV3glnGQet9k0QN4eR5DbxKrPJYn/1N9LlNpxJUr0iEM0CEx4QwHccKZ5y0XZ/GWdN6DGT3meY4kwvWEQ1aT0KV3NyJQFspLXQFlSwPjRLEoz4Np8I=
