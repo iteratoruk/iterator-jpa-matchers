@@ -12,6 +12,14 @@
 	</parent>
 
 	<name>JPA Matchers</name>
+	<url>${scm.https.home}</url>
+	<inceptionYear>2016</inceptionYear>
+	<scm>
+		<url>${scm.https.home}</url>
+		<connection>${scm.uri}</connection>
+		<developerConnection>${scm.uri}</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 	<description>Hamcrest matchers for JPA annotated Java classes</description>
 
 	<repositories>
