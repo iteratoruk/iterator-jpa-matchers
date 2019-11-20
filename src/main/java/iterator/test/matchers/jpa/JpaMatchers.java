@@ -1,16 +1,14 @@
 /**
  * Copyright © 2016 Iterator Ltd. (iteratoruk@gmail.com)
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
 package iterator.test.matchers.jpa;
@@ -26,6 +24,8 @@ import iterator.test.matchers.type.annotation.FieldAnnotationMatcher;
 import iterator.test.matchers.type.annotation.TypeAnnotationMatcher;
 
 public final class JpaMatchers {
+
+  private static final String VALUE = "value";
 
   public static <T> Matcher<Class<T>> hasColumnAnnotation(String fieldName) {
     return hasFieldAnnotation(fieldName, AnnotationMap.from(Column.class));
@@ -54,8 +54,7 @@ public final class JpaMatchers {
   }
 
   public static <T> Matcher<Class<T>> hasEntityListenersAnnotation(Class<?>[] entityListeners) {
-    return hasTypeAnnotation(
-        AnnotationMap.from(EntityListeners.class).set("value", entityListeners));
+    return hasTypeAnnotation(AnnotationMap.from(EntityListeners.class).set(VALUE, entityListeners));
   }
 
   public static <T> Matcher<Class<T>> hasEntityListenersAnnotation(
@@ -68,8 +67,7 @@ public final class JpaMatchers {
   }
 
   public static <T> Matcher<Class<T>> hasEnumeratedAnnotation(String fieldName, EnumType enumType) {
-    return hasFieldAnnotation(
-        fieldName, AnnotationMap.from(Enumerated.class).set("value", enumType));
+    return hasFieldAnnotation(fieldName, AnnotationMap.from(Enumerated.class).set(VALUE, enumType));
   }
 
   public static <T> Matcher<Class<T>> hasEnumeratedAnnotation(
@@ -173,7 +171,7 @@ public final class JpaMatchers {
   public static <T> Matcher<Class<T>> hasTemporalAnnotation(
       String fieldName, TemporalType temporalType) {
     return hasFieldAnnotation(
-        fieldName, AnnotationMap.from(Temporal.class).set("value", temporalType));
+        fieldName, AnnotationMap.from(Temporal.class).set(VALUE, temporalType));
   }
 
   public static <T> Matcher<Class<T>> hasTemporalAnnotation(
